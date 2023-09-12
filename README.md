@@ -1,5 +1,4 @@
-Call an API Integrating Redux with React application
-
+Call an API Integrating Redux with React application.
 
 
 
@@ -12,7 +11,8 @@ Also i use log and error Middleware.
 
 For User Interface i use React.
 
-I do not use react-redux library. All code done manually.
+Aldo I use react-redux library to intergrate redux in react.
+For that reason i use useDispatch and useSelector Hooks from react-redux library.
 
 
 
