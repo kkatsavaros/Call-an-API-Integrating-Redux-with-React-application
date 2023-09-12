@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Tasks from './components/Tasks'
 
-function App() {
+import store from "./store/configureStore"
+
+import StoreContext from './contexts/storeContext'
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    <StoreContext.Provider value={store}>
+
+      <div> <Tasks /> </div>
+
+    </StoreContext.Provider>   
+
+  )
 }
 
-export default App;
+export default App
+
+
+// We pass the store as a a props to this task component.   <Tasks store={store} /> 
+
+// Imagine we have multiple components and this Task component is deep in the component tree.
+// Then we have to pass this prop in all over the components, and that will be very messy.
+// So to solve this, we can use very useful reat feature, which is "context".
+// So with context, we can use this tool in every component which is available in app component.
+
+// What ever component is available in between this provider,
+// that Component and its child components can access this value, which is "store".
+
